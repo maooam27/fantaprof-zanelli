@@ -1,0 +1,8 @@
+dati nel database:
+- ID
+- Nome
+- Ultima azione
+- Ultimi punti aggiunti
+- Materia
+- Punti totali
+- data ultima azione
