@@ -1,2 +1,2 @@
 # fantaprof-zanelli
-Il fantaprof della 1°L dello zanelli
+Il fantaprof della classe 1°L della scuola Antonio Zanelli di Reggio Emilia
