@@ -7,9 +7,11 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
     name = ""
+    action = ""
     if request.method == 'POST':
         name = request.form.get('prof')
-    print(name)
+        action = request.form.get('action')
+    print(name, action)
     return render_template('index.html')
 
 
