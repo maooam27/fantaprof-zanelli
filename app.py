@@ -16,5 +16,3 @@ def homepage():
 
 
 app.run(debug=True)
-
-# TODO: Sistemare CSS
