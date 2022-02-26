@@ -1,9 +1,9 @@
-h1 {
+h6 {
     padding: 15px;
 }
 
-h6 {
-    padding-left: 35px;
+h1 {
+    padding-left: 15px;
 }
 
 button {
@@ -11,5 +11,9 @@ button {
 }
 
 input {
+    margin-left: 15px;
+}
 
+p {
+    margin-left: 15px;
 }
