@@ -114,6 +114,7 @@ def commit__to_database(name, action):
 
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def homepage():
     name = ""
     action = ""
@@ -123,6 +124,16 @@ def homepage():
         commit__to_database(name, action)
         print(name, action)
     return render_template('index.html')
+
+
+@app.route('/azioni', methods=['GET', 'POST'])
+def azioniPag():
+    return "Ciao amici"
+
+
+@app.route('/classifica', methods=['GET', 'POST'])
+def azioniPag():
+    return "Ciao amici"
 
 
 app.run(debug=True)
