@@ -4,8 +4,6 @@ from Person import *
 import sqlite3
 
 
-# TODO: Sistema il database e l'aggiunta di dati
-
 app = Flask(__name__)
 
 
@@ -13,15 +11,21 @@ def insert_db(prof: Prof, azione: str, punti: int):
     database = sqlite3.connect('database.db')
     cursor = database.cursor()
 
-    initial_total = None
+    final_total = None
 
     # fetch
     cursor.execute(f"""SELECT PuntiTotali FROM Punti WHERE Nome = '{prof.name}'""")
     initial_total = cursor.fetchall()
 
-    database.execute(f"""INSERT INTO Punti (ID, Nome, UltimaAzione, UltimiPunti, Materia, PuntiTotali, DataUltima)
-    VALUES (null, '{prof.name}', '{azione}', {punti}, '{prof.subject}', 69,
-    datetime('now', 'localtime'))""")
+    for row in initial_total:
+        final_total = row
+
+    cursor.execute(f'''UPDATE Punti SET UltimaAzione = "{azione}", UltimiPunti = {punti},
+    PuntiTotali = {punti + final_total[0]}, DataUltima = CURRENT_TIME WHERE Nome = "{prof.name}"''')
+
+    # database.execute(f"""INSERT INTO Punti (ID, Nome, UltimaAzione, UltimiPunti, Materia, PuntiTotali, DataUltima)
+    # VALUES (null, '{prof.name}', '{azione}', {punti}, '{prof.subject}', {punti},
+    # datetime('now', 'localtime'))""")
     database.commit()
     print(initial_total)
 
