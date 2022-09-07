@@ -128,12 +128,12 @@ def homepage():
 
 @app.route('/azioni', methods=['GET', 'POST'])
 def azioniPag():
-    return "Ciao amici"
+    return render_template('azioni.html')
 
 
 @app.route('/classifica', methods=['GET', 'POST'])
-def azioniPag():
-    return "Ciao amici"
+def classificaPag():
+    return render_template('classifica.html')
 
 
 app.run(debug=True)
