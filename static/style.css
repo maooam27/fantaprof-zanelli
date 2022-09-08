@@ -3,7 +3,7 @@ h6 {
 }
 
 h1 {
-    padding-left: 15px;
+    padding: 15px;
 }
 
 button {
@@ -16,4 +16,8 @@ input {
 
 p {
     margin-left: 15px;
+}
+
+h2 {
+    padding: 15px;
 }
