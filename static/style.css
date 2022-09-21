@@ -21,3 +21,13 @@ p {
 h2 {
     padding: 15px;
 }
+table {
+    border-collapse:collapse;
+    padding: 15px;
+    outline-offset: -15px;
+    margin-left: 15px;
+}
+td, th {
+    border:1px solid #ddd;
+    padding:8px;
+}

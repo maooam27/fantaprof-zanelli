@@ -133,7 +133,12 @@ def azioniPag():
 
 @app.route('/classifica', methods=['GET', 'POST'])
 def classificaPag():
-    return render_template('classifica.html')
+    database = sqlite3.connect('database.db')
+    cursor = database.cursor()
+
+    cursor.execute(f"""SELECT Nome, PuntiTotali FROM Punti ORDER BY PuntiTotali DESC""")
+    data = cursor.fetchall()
+    return render_template('classifica.html', data = data)
 
 
 app.run(debug=True)
